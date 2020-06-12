@@ -27,7 +27,7 @@ function getReactComponentSerializer() {
   }
   return (value) =>
     prettyFormat(renderer.create(value), {
-      plugins: [jestEmotion, serializers],
+      plugins: [jestEmotion, ...serializers],
     });
 }
 
