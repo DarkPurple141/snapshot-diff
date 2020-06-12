@@ -4,6 +4,7 @@
 
 const prettyFormat = require('pretty-format');
 const snapshot = require('jest-snapshot');
+const jestEmotion = require('jest-emotion');
 
 const serializers = snapshot.getSerializers();
 
@@ -25,7 +26,9 @@ function getReactComponentSerializer() {
     throw error;
   }
   return (value) =>
-    prettyFormat(renderer.create(value), { plugins: serializers });
+    prettyFormat(renderer.create(value), {
+      plugins: [jestEmotion, serializers],
+    });
 }
 
 const reactSerializer = {

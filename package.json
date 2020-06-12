@@ -19,7 +19,8 @@
     "node": ">=10"
   },
   "peerDependencies": {
-    "jest": ">=16"
+    "jest": ">=16",
+    "jest-emotion": "^10.0.32"
   },
   "dependencies": {
     "jest-diff": "^26.0.1",
